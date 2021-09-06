@@ -1,0 +1,9 @@
+<h1>Books#index</h1>
+
+<% @books.each do |book| %>
+  <p>タイトル：<%= link_to book.title, book_path(book.id) %>　著者：<%= link_to book.author.name, author_path(book.author.id) %></p>
+<% end %>
+
+<%= link_to "著者一覧", authors_path %>
+
+

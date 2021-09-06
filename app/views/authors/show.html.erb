@@ -1,0 +1,17 @@
+<h1>Authors#show</h1>
+
+<%= @author.name %>'s Page
+<% if @author.favorited_by?(current_user) %>
+  <%= link_to "お気に入りを解除する", author_favorites_path(@author.id), method: :delete %>
+<% else %>
+  <%= link_to "お気に入りに登録する", author_favorites_path(@author.id), method: :post %>
+<% end %><br>
+
+<% @books.each do |book| %>
+  <%= link_to book.title, book_path(book.id) %><br>
+<% end %><br>
+
+<%= link_to "著者一覧に戻る", authors_path %>
+
+
+
